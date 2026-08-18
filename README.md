@@ -1,17 +1,24 @@
-ExpNo 6 : Implement Minimax Search Algorithm for a Simple TIC-TAC-TOE game
-Name: JAYA SURYA R
-Register Number: 212225230114
-Aim:
-Implement Minimax Search Algorithm for a Simple TIC-TAC-TOE game
+<h1>ExpNo 5 : Implement Minimax Search Algorithm for a Simple TIC-TAC-TOE game</h1>
 
-Theory and Procedure:
+<h3>Name: JAYA SURYA R</h3>
+<h3>Register Number: 2122252301414</h3>
+
+<H3>Aim:</H3>
+<p>
+    Implement Minimax Search Algorithm for a Simple TIC-TAC-TOE game
+</p>
+
+<H3>Theory and Procedure:</H3>
+
 To begin, let's start by defining what it means to play a perfect game of tic tac toe:
 
 If I play perfectly, every time I play I will either win the game, or I will draw the game. Furthermore if I play against another perfect player, I will always draw the game.
 
 How might we describe these situations quantitatively? Let's assign a score to the "end game conditions:"
 
-I win, hurray! I get 10 points! I lose, shit. I lose 10 points (because the other player gets 10 points) I draw, whatever. I get zero points, nobody gets any points.
+I win, hurray! I get 10 points!
+I lose, shit. I lose 10 points (because the other player gets 10 points)
+I draw, whatever. I get zero points, nobody gets any points.
 
 So now we have a situation where we can determine a possible score for any game end state.
 
@@ -19,7 +26,7 @@ Looking at a Brief Example
 
 To apply this, let's take an example from near the end of a game, where it is my turn. I am X. My goal here, obviously, is to maximize my end game score.
 
-image
+![image](https://github.com/natsaravanan/19AI405FUNDAMENTALSOFARTIFICIALINTELLIGENCE/assets/87870499/498656fc-79ce-4234-a623-06568bad8dda)
 
 If the top of this image represents the state of the game I see when it is my turn, then I have some choices to make, there are three places I can play, one of which clearly results in me wining and earning the 10 points. If I don't make that move, O could very easily win. And I don't want O to win, so my goal here, as the first player, should be to pick the maximum scoring move.
 
@@ -27,7 +34,7 @@ But What About O?
 
 What do we know about O? Well we should assume that O is also playing to win this game, but relative to us, the first player, O wants obviously wants to chose the move that results in the worst score for us, it wants to pick a move that would minimize our ultimate score. Let's look at things from O's perspective, starting with the two other game states from above in which we don't immediately win:
 
-image
+![image](https://github.com/natsaravanan/19AI405FUNDAMENTALSOFARTIFICIALINTELLIGENCE/assets/87870499/029b1a70-e92e-46c0-9a32-d6aea98ecd9d)
 
 The choice is clear, O would pick any of the moves that result in a score of -10.
 
@@ -41,7 +48,11 @@ If the game is over, return the score from X's perspective. Otherwise get a list
 
 Let's walk through the algorithm's execution with the full move tree, and show why, algorithmically, the instant winning move will be picked.
 
-PROGRAM
+---
+
+## PROGRAM
+
+```python
 import time
 
 
@@ -216,10 +227,17 @@ def main():
 
 if __name__ == "__main__":
     main()
-Sample Input and Output
-image
+```
 
-Output
+---
+
+## Sample Input and Output
+
+![image](https://github.com/natsaravanan/19AI405FUNDAMENTALSOFARTIFICIALINTELLIGENCE/assets/87870499/498656fc-79ce-4234-a623-06568bad8dda)
+
+### Output
+
+```text
 Evaluation time: 0.0s
 Recommended move: X = 2, Y = 2
 Insert the X coordinate: 2
@@ -230,7 +248,13 @@ X| X| O|
 X| O| X|
 
 It's a tie!
-Sample Input and Output
+```
+
+---
+
+## Sample Input and Output
+
+```text
 Evaluation time: 1.2587709s
 Recommended move: X = 0, Y = 0
 Insert the X coordinate: 0
@@ -256,6 +280,9 @@ X| X| .|
 X| X| O|
 .| O| .|
 .| .| .|
+```
+
+```text
 Evaluation time: 0.0s
 Recommended move: X = 2, Y = 0
 Insert the X coordinate: 2
@@ -281,6 +308,9 @@ X| .| .|
 X| X| O|
 O| O| X|
 X| O| .|
+```
+
+```text
 Evaluation time: 0.0s
 Recommended move: X = 2, Y = 2
 Insert the X coordinate: 2
@@ -291,5 +321,10 @@ O| O| X|
 X| O| X|
 
 It's a tie!
-RESULT:
+```
+
+---
+
+## RESULT:
+
 Thus, Implementation of Minimax Search Algorithm for a Simple TIC-TAC-TOE game was done successfully.
